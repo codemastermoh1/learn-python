@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبات بايثون - شرح تفصيلي</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(120deg, #f4f4f4, #eaeaea);
+            color: #333;
+            direction: rtl;
+            line-height: 1.8;
+        }
+        header {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.8rem;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        .content-section {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .content-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .content-section h2 i {
+            color: #007bff;
+            margin-left: 10px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 30px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        pre code {
+            color: #d63384;
+        }
+        .copy-btn {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>مكتبات بايثون - شرح تفصيلي</h1>
+    <p>تعرف على مكتبات Python الأكثر شيوعًا مع أمثلة عملية</p>
+</header>
+
+<div class="container my-5">
+
+    <!-- مكتبة OpenCV -->
+    <div class="content-section">
+        <h2><i class="fas fa-camera"></i> مكتبة OpenCV</h2>
+        <p><strong>تعريف:</strong> مكتبة OpenCV تُستخدم لمعالجة الصور والفيديوهات. تُعتبر من أقوى المكتبات المستخدمة في مجال الرؤية الحاسوبية (Computer Vision).</p>
+        <p><strong>طريقة التثبيت:</strong></p>
+        <pre><code>pip install opencv-python</code></pre>
+        <p><strong>أمثلة:</strong></p>
+        <pre><code id="opencv-example">
+# استيراد مكتبة OpenCV
+import cv2
+
+# قراءة صورة
+image = cv2.imread('example.jpg')
+
+# تحويل الصورة إلى التدرج الرمادي
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# عرض الصورة
+cv2.imshow('صورة رمادية', gray_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+        </code></pre>
+        <button class="copy-btn" onclick="copyCode('opencv-example')">نسخ الكود</button>
+    </div>
+
+    <!-- مكتبة Pillow -->
+    <div class="content-section">
+        <h2><i class="fas fa-image"></i> مكتبة Pillow</h2>
+        <p><strong>تعريف:</strong> مكتبة Pillow تُستخدم لمعالجة الصور. تُعتبر خيارًا بسيطًا لتحرير الصور مقارنة بـ OpenCV.</p>
+        <p><strong>طريقة التثبيت:</strong></p>
+        <pre><code>pip install pillow</code></pre>
+        <p><strong>أمثلة:</strong></p>
+        <pre><code id="pillow-example">
+# استيراد مكتبة Pillow
+from PIL import Image
+
+# فتح صورة
+image = Image.open('example.jpg')
+
+# تغيير حجم الصورة
+resized_image = image.resize((100, 100))
+
+# حفظ الصورة الجديدة
+resized_image.save('resized_example.jpg')
+        </code></pre>
+        <button class="copy-btn" onclick="copyCode('pillow-example')">نسخ الكود</button>
+    </div>
+
+    <!-- مكتبة PyTorch -->
+    <div class="content-section">
+        <h2><i class="fas fa-lightbulb"></i> مكتبة PyTorch</h2>
+        <p><strong>تعريف:</strong> مكتبة PyTorch تُستخدم لتطوير نماذج الذكاء الاصطناعي والتعلم العميق. تُعتبر منافسًا قويًا لـ TensorFlow.</p>
+        <p><strong>طريقة التثبيت:</strong></p>
+        <pre><code>pip install torch</code></pre>
+        <p><strong>أمثلة:</strong></p>
+        <pre><code id="pytorch-example">
+# استيراد مكتبة PyTorch
+import torch
+
+# إنشاء مصفوفة بسيطة
+x = torch.tensor([1, 2, 3])
+
+# إجراء عمليات رياضية
+print(x + 2)  # إضافة 2 لكل عنصر
+        </code></pre>
+        <button class="copy-btn" onclick="copyCode('pytorch-example')">نسخ الكود</button>
+    </div>
+
+    <!-- مكتبة Seaborn -->
+    <div class="content-section">
+        <h2><i class="fas fa-chart-bar"></i> مكتبة Seaborn</h2>
+        <p><strong>تعريف:</strong> مكتبة Seaborn تُستخدم لإنشاء رسوم بيانية إحصائية بسهولة، وهي مبنية على مكتبة Matplotlib.</p>
+        <p><strong>طريقة التثبيت:</strong></p>
+        <pre><code>pip install seaborn</code></pre>
+        <p><strong>أمثلة:</strong></p>
+        <pre><code id="seaborn-example">
+# استيراد المكتبة
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# إنشاء بيانات
+data = [10, 20, 20, 40, 50, 50, 50]
+
+# رسم مخطط
+sns.histplot(data, bins=5)
+plt.show()
+        </code></pre>
+        <button class="copy-btn" onclick="copyCode('seaborn-example')">نسخ الكود</button>
+    </div>
+
+    <!-- مكتبة PyGame -->
+    <div class="content-section">
+        <h2><i class="fas fa-gamepad"></i> مكتبة PyGame</h2>
+        <p><strong>تعريف:</strong> مكتبة PyGame تُستخدم لتطوير الألعاب ثنائية الأبعاد بسهولة.</p>
+        <p><strong>طريقة التثبيت:</strong></p>
+        <pre><code>pip install pygame</code></pre>
+        <p><strong>أمثلة:</strong></p>
+        <pre><code id="pygame-example">
+# استيراد المكتبة
+import pygame
+
+# تهيئة PyGame
+pygame.init()
+
+# إنشاء نافذة
+screen = pygame.display.set_mode((400, 300))
+
+# اللون الأحمر
+red = (255, 0, 0)
+
+# رسم مستطيل
+pygame.draw.rect(screen, red, (50, 50, 100, 50))
+
+# تحديث الشاشة
+pygame.display.flip()
+
+# انتظار 5 ثواني قبل الإغلاق
+pygame.time.wait(5000)
+        </code></pre>
+        <button class="copy-btn" onclick="copyCode('pygame-example')">نسخ الكود</button>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2024 مكتبات بايثون - جميع الحقوق محفوظة</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    function copyCode(id) {
+        var copyText = document.getElementById(id);
+        var range = document.createRange();
+        range.selectNode(copyText);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        alert("تم نسخ الكود إلى الحافظة");
+    }
+</script>
+</body>
+</html>

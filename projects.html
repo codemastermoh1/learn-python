@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>مشاريع بايثون للمبتدئين</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            direction: rtl;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            direction: ltr;
+        }
+        .section-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            height: 100px;
+        }
+        .btn-print {
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مشاريع بايثون للمبتدئين</h1>
+        <p>دليلك الشامل لمشاريع بايثون للمبتدئين مع شرح كامل</p>
+    </header>
+
+    <div class="container my-5">
+        <!-- آلة حاسبة -->
+        <div class="content-section">
+            <h2>آلة حاسبة بسيطة</h2>
+            <p>في هذا المشروع، سنقوم بإنشاء آلة حاسبة بسيطة باستخدام بايثون. يمكن للمستخدم اختيار العملية الحسابية (جمع، طرح، ضرب، قسمة) وإدخال الأرقام التي يرغب في العمل عليها. هذا المشروع هو نقطة انطلاق جيدة لفهم كيفية استخدام بايثون لتنفيذ العمليات الرياضية الأساسية.</p>
+            <div class="code-block">
+                <pre><code>
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "لا يمكن القسمة على صفر"
+    return x / y
+
+print("اختر العملية:")
+print("1. جمع")
+print("2. طرح")
+print("3. ضرب")
+print("4. قسمة")
+
+choice = input("أدخل رقم الخيار (1/2/3/4): ")
+
+num1 = float(input("أدخل الرقم الأول: "))
+num2 = float(input("أدخل الرقم الثاني: "))
+
+if choice == '1':
+    print(f"النتيجة: {add(num1, num2)}")
+elif choice == '2':
+    print(f"النتيجة: {subtract(num1, num2)}")
+elif choice == '3':
+    print(f"النتيجة: {multiply(num1, num2)}")
+elif choice == '4':
+    print(f"النتيجة: {divide(num1, num2)}")
+else:
+    print("خيار غير صالح")
+                </code></pre>
+            </div>
+        </div>
+
+        <!-- مولد كلمات المرور -->
+        <div class="content-section">
+            <h2>مولد كلمات مرور عشوائية</h2>
+            <p>هذا المشروع يقوم بإنشاء كلمة مرور عشوائية تحتوي على أحرف كبيرة وصغيرة، أرقام ورموز خاصة. الهدف من هذا المشروع هو تعلم كيفية التعامل مع النصوص والأحرف العشوائية في بايثون، وكذلك كيفية استخدام مكتبة `string` لإنشاء كلمات مرور آمنة.</p>
+            <div class="code-block">
+                <pre><code>
+import random
+import string
+
+def generate_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for i in range(length))
+    return password
+
+length = int(input("أدخل طول كلمة المرور: "))
+print(f"كلمة المرور الخاصة بك هي: {generate_password(length)}")
+                </code></pre>
+            </div>
+        </div>
+
+        <!-- لعبة توقع الرقم -->
+        <div class="content-section">
+            <h2>لعبة توقع الرقم</h2>
+            <p>في هذه اللعبة، يقوم البرنامج باختيار رقم عشوائي بين 1 و 100، وعلى اللاعب أن يخمن الرقم. يقدم البرنامج تلميحات حول ما إذا كان الرقم المدخل أعلى أو أقل من الرقم الصحيح. هذا المشروع سيساعدك على تعلم التعامل مع الحلقات والشروط في بايثون.</p>
+            <div class="code-block">
+                <pre><code>
+import random
+
+def guess_number():
+    number_to_guess = random.randint(1, 100)
+    guess = None
+    attempts = 0
+
+    print("توقع الرقم بين 1 و 100")
+
+    while guess != number_to_guess:
+        guess = int(input("أدخل تخمينك: "))
+        attempts += 1
+        if guess < number_to_guess:
+            print("أعلى!")
+        elif guess > number_to_guess:
+            print("أقل!")
+        else:
+            print(f"مبروك! لقد خمّنت الرقم الصحيح في {attempts} محاولات.")
+
+guess_number()
+                </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 مشاريع بايثون للمبتدئين | جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

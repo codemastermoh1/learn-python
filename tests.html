@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>اختبار بايثون</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            direction: rtl;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        .question-container p {
+            font-weight: bold;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            height: 100px;
+        }
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+        }
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+        .result p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>اختبار بايثون</h1>
+    <p>اختبر مهاراتك في بايثون!</p>
+</header>
+
+<div class="container">
+    <div class="content-section">
+        <h2>اختبار مستوى مبتدئ</h2>
+        <div class="question-container">
+            <p class="question">ما نوع البيانات الذي يُستخدم لتخزين النصوص في بايثون؟</p>
+            <ul class="options">
+                <li><input type="radio" name="q1" value="int">int</li>
+                <li><input type="radio" name="q1" value="float">float</li>
+                <li><input type="radio" name="q1" value="str">str</li>
+                <li><input type="radio" name="q1" value="list">list</li>
+            </ul>
+        </div>
+
+        <div class="question-container">
+            <p class="question">أي من الخيارات التالية يستخدم لتعليق سطر واحد في بايثون؟</p>
+            <ul class="options">
+                <li><input type="radio" name="q2" value="/* */">/* */</li>
+                <li><input type="radio" name="q2" value="//">//</li>
+                <li><input type="radio" name="q2" value="#">#</li>
+                <li><input type="radio" name="q2" value="<!-- -->"><!-- --></li>
+            </ul>
+        </div>
+
+        <div class="question-container">
+            <p class="question">أي من الكودات التالية يقوم بتحويل النص "123" إلى عدد صحيح في بايثون؟</p>
+            <ul class="options">
+                <li><input type="radio" name="q9" value="int('123')">int('123')</li>
+                <li><input type="radio" name="q9" value="str('123')">str('123')</li>
+                <li><input type="radio" name="q9" value="float('123')">float('123')</li>
+                <li><input type="radio" name="q9" value="convert('123')">convert('123')</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>اختبار مستوى متوسط</h2>
+        <div class="question-container">
+            <p class="question">ما هي النتيجة عند تنفيذ الكود التالي؟ 
+                <pre>
+x = [1, 2, 3]
+x.append([4, 5])
+print(len(x))
+                </pre>
+            </p>
+            <ul class="options">
+                <li><input type="radio" name="q3" value="4">4</li>
+                <li><input type="radio" name="q3" value="5">5</li>
+                <li><input type="radio" name="q3" value="6">6</li>
+                <li><input type="radio" name="q3" value="3">3</li>
+            </ul>
+        </div>
+
+        <div class="question-container">
+            <p class="question">أي من الخيارات التالية يُنتج عددًا عشوائيًا بين 1 و10 (شاملًا)؟</p>
+            <ul class="options">
+                <li><input type="radio" name="q4" value="random.randint(1, 10)">random.randint(1, 10)</li>
+                <li><input type="radio" name="q4" value="random.random(1, 10)">random.random(1, 10)</li>
+                <li><input type="radio" name="q4" value="random.range(1, 10)">random.range(1, 10)</li>
+                <li><input type="radio" name="q4" value="random.uniform(1, 10)">random.uniform(1, 10)</li>
+            </ul>
+        </div>
+
+        <div class="question-container">
+            <p class="question">ما هي النتيجة التي ستظهر عند تنفيذ الكود التالي؟
+                <pre>
+x = [1, 2, 3, 4, 5]
+print(x[-1])
+                </pre>
+            </p>
+            <ul class="options">
+                <li><input type="radio" name="q10" value="1">1</li>
+                <li><input type="radio" name="q10" value="5">5</li>
+                <li><input type="radio" name="q10" value="4">4</li>
+                <li><input type="radio" name="q10" value="خطأ">خطأ</li>
+            </ul>
+        </div>
+
+        <div class="question-container">
+            <p class="question">أي من الخيارات التالية يعبر عن طريقة تعريف دالة في بايثون؟</p>
+            <ul class="options">
+                <li><input type="radio" name="q7" value="function myFunc() {}">function myFunc() {}</li>
+                <li><input type="radio" name="q7" value="def myFunc():">def myFunc():</li>
+                <li><input type="radio" name="q7" value="myFunc() => {}">myFunc() => {}</li>
+                <li><input type="radio" name="q7" value="function: myFunc">function: myFunc</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>اختبار مستوى محترف</h2>
+        <div class="question-container">
+            <p class="question">ما هي نتيجة الكود التالي؟
+                <pre>
+x = [1, 2, 3]
+y = x
+y[0] = 0
+print(x)
+                </pre>
+            </p>
+            <ul class="options">
+                <li><input type="radio" name="q5" value="[1, 2, 3]">[1, 2, 3]</li>
+                <li><input type="radio" name="q5" value="[0, 2, 3]">[0, 2, 3]</li>
+                <li><input type="radio" name="q5" value="[1, 0, 3]">[1, 0, 3]</li>
+                <li><input type="radio" name="q5" value="Error">خطأ في الكود</li>
+            </ul>
+        </div>
+
+        <div class="question-container">
+            <p class="question">ما هي النتيجة عند تنفيذ الكود التالي؟
+                <pre>
+def my_func(a, b=[]):
+    b.append(a)
+    return b
+
+print(my_func(1))
+print(my_func(2))
+                </pre>
+            </p>
+            <ul class="options">
+                <li><input type="radio" name="q8" value="[1], [2]">[1], [2]</li>
+                <li><input type="radio" name="q8" value="[1], [1, 2]">[1], [1, 2]</li>
+                <li><input type="radio" name="q8" value="Error">Error</li>
+                <li><input type="radio" name="q8" value="خطأ في الكود">خطأ في الكود</li>
+            </ul>
+        </div>
+
+        <div class="question-container">
+            <p class="question">ما هي النتيجة عند تنفيذ الكود التالي؟
+                <pre>
+x = {1, 2, 3}
+y = x
+x.add(4)
+print(y)
+                </pre>
+            </p>
+            <ul class="options">
+                <li><input type="radio" name="q11" value="{1, 2, 3, 4}">{1, 2, 3, 4}</li>
+                <li><input type="radio" name="q11" value="{1, 2, 3}">{1, 2, 3}</li>
+                <li><input type="radio" name="q11" value="Error">Error</li>
+                <li><input type="radio" name="q11" value="خطأ في الكود">خطأ في الكود</li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="btn-submit" onclick="submitQuiz()">إرسال الإجابات</button>
+
+    <div class="result" id="result" style="display:none;">
+        <h3>نتيجتك:</h3>
+        <p id="score"></p>
+        <p id="advice"></p>
+    </div>
+</div>
+
+<footer>
+    <p>تم تطوير هذا الموقع بواسطة Mohamed. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+    function submitQuiz() {
+        const answers = {
+            q1: "str",
+            q2: "#",
+            q3: "4",
+            q4: "random.randint(1, 10)",
+            q5: "[0, 2, 3]",
+            q6: "2",
+            q7: "def myFunc():",
+            q8: "[1], [1, 2]",
+            q9: "int('123')",
+            q10: "5",
+            q11: "{1, 2, 3, 4}"
+        };
+
+        let score = 0;
+        let totalQuestions = 11;
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selected && selected.value === answers[`q${i}`]) {
+                score++;
+            }
+        }
+
+        const scoreElement = document.getElementById("score");
+        const adviceElement = document.getElementById("advice");
+        const resultElement = document.getElementById("result");
+
+        scoreElement.textContent = `أنت حصلت على ${score} من ${totalQuestions} إجابة صحيحة.`;
+
+        if (score === totalQuestions) {
+            adviceElement.textContent = "ممتاز! أنت محترف في بايثون!";
+        } else if (score >= totalQuestions * 0.75) {
+            adviceElement.textContent = "جيد جدًا! لديك مهارات قوية في بايثون.";
+        } else if (score >= totalQuestions * 0.5) {
+            adviceElement.textContent = "مقبول. يمكنك تحسين مهاراتك.";
+        } else {
+            adviceElement.textContent = "يجب أن تعمل أكثر على مهاراتك في بايثون.";
+        }
+
+        resultElement.style.display = "block";
+    }
+</script>
+
+</body>
+</html>

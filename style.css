@@ -1,0 +1,38 @@
+/* تصميم عام */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* الرأس */
+  header {
+    background: linear-gradient(90deg, #007bff, #6610f2);
+    color: white;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+  }
+  
+  header .btn {
+    background-color: white;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  /* البطاقات */
+  .card img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* التذييل */
+  footer {
+    background-color: #333;
+    color: white;
+  }  

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاريع بايثون - قائمة المشاريع</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            direction: rtl;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.8rem;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .project-card h3 {
+            color: #007bff;
+            font-size: 1.5rem;
+        }
+        .project-card p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .btn-view {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 8px 20px;
+            border: none;
+            font-size: 1.1rem;
+        }
+        .btn-view:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .modal-body {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+        }
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>مشاريع بايثون - قائمة المشاريع</h1>
+    <p>استعرض أفضل المشاريع من المبتدئ إلى المحترف باستخدام بايثون!</p>
+</header>
+
+<div class="container my-5">
+
+    <!-- تصنيف المشاريع -->
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-info category-btn" data-toggle="collapse" data-target="#beginnerProjects">مبتدئ</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-warning category-btn" data-toggle="collapse" data-target="#intermediateProjects">متوسط</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-danger category-btn" data-toggle="collapse" data-target="#advancedProjects">محترف</button>
+        </div>
+    </div>
+
+    <!-- قائمة المشاريع المبتدئة -->
+    <div id="beginnerProjects" class="collapse">
+        <!-- مشروع 1: آلة حاسبة -->
+        <div class="project-card">
+            <h3>مشروع 1: آلة حاسبة</h3>
+            <p>وصف: آلة حاسبة بسيطة باستخدام بايثون مع واجهة مستخدم رسومية.</p>
+            <button class="btn btn-view" data-toggle="modal" data-target="#codeModal1">رؤية الكود</button>
+        </div>
+
+        <!-- نافذة الكود -->
+        <div class="modal fade" id="codeModal1" tabindex="-1" aria-labelledby="codeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="codeModalLabel"> كود مشروع آلة حاسبة نصية</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <pre><code>
+                            num1=float(input("enter the first number: "))
+                            operator=input("enter the operator: ")
+                            num2=float(input("enter the second number: "))
+                            
+                            if operator=="+":
+                              print(num1+num2)
+                            elif operator=="-":
+                              print(num1-num2)
+                            elif operator=="*":
+                              print(num1*num2)
+                            elif operator=="/":
+                              print(num1/num2)
+                            else:
+                              print("wrong operator")
+                        </code></pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-primary" onclick="copyCode('code1')">نسخ الكود</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- إضافة رابط يوتيوب -->
+        <div class="project-card">
+            <h3>شرح المشروع على يوتيوب</h3>
+            <a href="https://www.youtube.com/watch?v=Vj8zWPW5kKg" target="_blank" class="btn btn-danger">
+                مشاهدة شرح الفيديو
+            </a>
+        </div>
+
+        <!-- مشروع 2: آلة حاسبة علمية -->
+        <div class="project-card">
+            <h3>مشروع لعبة اسءلة</h3>
+            <P>مشروع لعية الاسءلة نصي بي تكرار حاول تعمله بنفسك</P>
+            <button class="btn btn-view" data-toggle="modal" data-target="#codeModal2">رؤية الكود</button>
+        </div>
+
+        <!-- نافذة الكود -->
+        <div class="modal fade" id="codeModal2" tabindex="-1" aria-labelledby="codeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="codeModalLabel">كود مشروع آلة حاسبة نصية</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <pre><code>
+                            # Questions and correct answers
+                            questions = {
+                                "What is the largest planet in the solar system?": "Jupiter",
+                                "What is the smallest animal in the world?": "Bumblebee bat",
+                                "Who invented the telephone?": "Alexander Graham Bell",
+                                "What is the capital of France?": "Paris"
+                            }
+                            
+                            # While loop to repeat the questions
+                            while True:
+                                # Pick a question randomly from the dictionary
+                                for question, correct_answer in questions.items():
+                                    print(question)
+                                    user_answer = input("Enter your answer: ").strip()
+                                    
+                                    # Check if the answer is correct
+                                    if user_answer.lower() == correct_answer.lower():
+                                        print("Correct answer!")
+                                    else:
+                                        print(f"Incorrect answer! The correct answer is: {correct_answer}")
+                                    
+                                    # Ask the user if they want to continue
+                                    continue_game = input("Do you want to continue playing? (yes/no): ").strip().lower()
+                                    
+                                    if continue_game != "yes":
+                                        print("Thanks for playing!")
+                                        break
+                            
+                                # Ask the user if they want to restart the game
+                                restart_game = input("Do you want to restart the game? (yes/no): ").strip().lower()
+                                if restart_game != "yes":
+                                    print("Goodbye!")
+                                    break                                                     
+                        </code></pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-primary" onclick="copyCode('code2')">نسخ الكود</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- إضافة رابط يوتيوب -->
+        <div class="project-card">
+            <h3>شرح المشروع على يوتيوب</h3>
+            <a href="https://youtu.be/pfTANblumX4?si=g7AYmxUT82UiS_hs" target="_blank" class="btn btn-danger">
+                مشاهدة شرح الفيديو
+            </a>
+        </div>
+    </div>
+
+    <!-- قائمة المشاريع المتوسطة -->
+    <div id="intermediateProjects" class="collapse">
+        <!-- مشروع 3: برنامج إدارة المهام -->
+        <div class="project-card">
+            <h3>مشروع 3: برنامج إدارة المهام</h3>
+            <p>وصف: برنامج يسمح للمستخدم بإضافة مهام وتنظيمها.</p>
+            <button class="btn btn-view" data-toggle="modal" data-target="#codeModal3">رؤية الكود</button>
+        </div>
+
+        <!-- نافذة الكود -->
+        <div class="modal fade" id="codeModal3" tabindex="-1" aria-labelledby="codeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="codeModalLabel">كود مشروع إدارة المهام</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <pre><code>
+# برنامج إدارة المهام
+tasks = []
+
+def add_task(task):
+    tasks.append(task)
+    print("تم إضافة المهمة: ", task)
+
+def show_tasks():
+    print("المهام الحالية:")
+    for task in tasks:
+        print("- ", task)
+
+# إضافة مهام وعرضها
+add_task("مراجعة المشروع")
+add_task("قراءة كتاب")
+show_tasks()
+                        </code></pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-primary" onclick="copyCode('code3')">نسخ الكود</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- إضافة رابط يوتيوب -->
+        <div class="project-card">
+            <h3>شرح المشروع على يوتيوب</h3>
+            <a href="https://youtu.be/xNm6y8SYcs4?si=mOYeQiIVL-rJK9NE" target="_blank" class="btn btn-danger">
+                مشاهدة شرح الفيديو
+            </a>
+        </div>
+    </div>
+
+    <!-- قائمة المشاريع المحترفة -->
+    <div id="advancedProjects" class="collapse">
+        <!-- مشروع 4: لعبة الشطرنج -->
+        <div class="project-card">
+            <h3>مشروع 4: لعبة x-o</h3>
+            <p>وضف مشروع لعبة x-o بسيطة</p>
+            <a href="https://youtu.be/GCYYkOSKj80?si=X8dH265P7MC1kXUQ" target="_blank" class="btn btn-danger">
+                مشاهدة شرح الفيديو
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2024 مشاريع بايثون - جميع الحقوق محفوظة</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function copyCode(id) {
+        var code = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(code).then(function() {
+            console.log("تم نسخ الكود بنجاح")
+        });
+    }
+</script>
+
+</body>
+</html>
